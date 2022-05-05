@@ -28,5 +28,33 @@ productCtrl.findProductCtrl = (req,res)=>{
 })
 }
 
+productCtrl.updateProductCtrl  = (req,res) =>{
+    let reqs = req.body
+    productService.updateProductService(reqs)
+    .then((result)=>{
+        res.send({
+            code:200,
+            message:"Products Updated",
+            status:true
+        })
+    },(err)=>{
+        res.send({code:err.code,message:err.message})
+    })
+}
+productCtrl.deleteProductCtrl = (req,res)=>{
+    let reqs = req.body
+    productService.deleteProductService(reqs)
+    .then((result)=>{
+        res.send({
+            code:200,
+            message:"Products Deleted",
+            status:true
+        })
+    },(err)=>{
+        res.send({code:err.code,message:err.message})
+    })   
+}
+
+
 
 module.exports = productCtrl

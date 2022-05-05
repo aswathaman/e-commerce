@@ -8,5 +8,8 @@ module.exports  = (app) =>{
     app.get('/user/find',userController.findUserCtrl)
     app.post('/product/create',productController.productCreateCtrl)
     app.get('/product/find',productController.findProductCtrl)
+    app.post('/product/update',productController.updateProductCtrl)
+    app.delete('/product/delete',productController.deleteProductCtrl)
+
 
  }
