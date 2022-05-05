@@ -14,7 +14,7 @@ userService.createUserService(reqs).then(result=>{
 })
 }
 UserCtrl.findUserCtrl = (req,res)=>{
-   let  reqs = req.body;
+   let  reqs = req.query;
    userService.findUserService(reqs)
    .then((result)=>{
     res.send({
